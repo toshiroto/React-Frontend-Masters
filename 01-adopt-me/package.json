@@ -1,0 +1,16 @@
+{
+  "name": "-y",
+  "version": "1.0.0",
+  "description": "Adopt me project",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^8.1.0",
+    "prettier": "^2.5.1"
+  }
+}
