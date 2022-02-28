@@ -11,18 +11,20 @@ const SearchParams = () => {
   const breeds = [];
 
   useEffect(() => {
-    requestsPets();
-  }, []);
+    requestPets();
+  }, [animal]);
 
   async function requestPets() {
     const res = await fetch(
       `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
     const json = await res.json();
+
     console.log(json);
 
     setPets(json.pets);
   }
+
   return (
     <div className="search-params">
       <form>
@@ -69,6 +71,16 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
+      <div>
+        {pets.map((pet) => (
+          <Pet
+            name={pet.name}
+            animal={pet.animal}
+            breed={pet.breed}
+            key={pet.id}
+          />
+        ))}
+      </div>
     </div>
   );
 };
