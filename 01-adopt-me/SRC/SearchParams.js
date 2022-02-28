@@ -26,7 +26,12 @@ const SearchParams = () => {
 
   return (
     <div className="search-params">
-      <form>
+      <form
+       onSubmit={e => {
+         e.preventDefault();
+         requestPets();
+       }}
+      >
         <label htmlFor="location">
           Location
           <input
@@ -55,6 +60,7 @@ const SearchParams = () => {
         <label htmlFor="breed">
           Breed
           <select
+
             id="breed"
             value={breed}
             onChange={(e) => setBreed(e.target.value)}
