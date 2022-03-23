@@ -23,14 +23,14 @@ class ErrorBoundery extends Component {
     } else if (this.state.hasError) {
       return (
         <h2>
-          There was an error. Oh no. <Link to="/">Click here</Link> to back to
-          the home page or wait five seconds.
+          There was an error. Oh no. What are we going to do. JK.{" "}
+          <Link to="/">Click here</Link> to back to the home page or wait five
+          seconds.
         </h2>
       );
     }
     return this.props.children;
   }
 }
-
 
 export default ErrorBoundery;
